@@ -23,13 +23,5 @@ bei Interesse müssen wir einen anderen Weg finden.
 <acc_table.txt> Die Accuracy Daten für die alle Modelle (ohne Bootstrap Aggregation)
 <acc_table2.txt> Die Accuracy Daten für die alle Bootstrap Aggregation Modelle 
 
-Die Ergebnisse werden aktuell auf Seiten veröffentlicht:
 
-1)
-Die http Verbindung und der Port 3838 ist aktuell noch notwendig. Das Ergebnis zur Vorhersage
-einer Immobilie ist unter Tools -> Immobilienbewertung zu finden
-http://baartz.solutions:3838/
-
-2)
-http://immobiliensales.info/
 
