@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[width=42.00cm, height=59.40cm, left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{babel}
+\usepackage{blindtext}
+\setlength{\parindent}{0pt} % Einrücken vom Text unterdrücken
+\usepackage{wrapfig}% textumflossene Grafik
+\usepackage{xcolor} % Farbe
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{xcolor}
+\usepackage{subfigure}
+\newtheorem{Code_kurz}{Code  }[chapter]
+\usepackage{caption}
+\usepackage{float}
+
+
+\begin{document}
+	\include{kapitel - en/header}
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\thispagestyle{empty}
+	\cleardoublepage\pagenumbering{arabic}
+	
+	\include{kapitel - en/Einleitung}
+	\include{kapitel - en/Webscraping}
+	\include{kapitel - en/Datenanalyse}
+	\include{kapitel - en/model}
+
+	\chapter{Summary} \label{sec: Fazit}
+	The goal of this work was to make predictions for warm and cold rents based on real estate data that was read out via webscraping from immonet.de. The reading of the data worked well, but there were many erroneous data, which were discussed in chapter \ref{sec:Webscraping} . For example, there were cases where the cold rent was higher than the warm rent. These data were manually corrected once patterns were detected. The problems already indicated that prediction could be difficult. The outlier analysis also showed that there were other errors in the data, such as properties with year of construction 0022 or energy consumption greater than 60,000 $kWh/(m^2 \cdot a)$.	Some of these problems were solved by converting the affected data into categorical data, such as creating three and four classes, respectively, for year of construction, one of which was for missing data. Since the correlations before and after the analysis of the outliers did not improve, the outliers were not removed. Linear regression in section \ref{subsec: lineare Regression} and anova analysis were first performed, and the prediction for warm rent was very poor compared to the other models.  The decision tree in section \ref{subsec: xg} provided a better comparative model for the neural networks in section \ref{sec:NN}.Problems with convergence were noted and it was difficult to decide on a specific model. The subsequent bootstrap aggregation in section \ref{subsec: boot} brought some clarity. Based on these 210 models, the final decision was made to use the 60 more complex models, and based on this, a prediction interval was created for the test data. The analysis of the prediction intervals yielded sobering results with only 22 \% hits. The residual analysis indicated that the modeling had problems especially at the edges. In retrospect, the decision not to remove the outliers detected by the Mahalonobis distance may have been wrong. This might have resulted in better modeling of the residuals in the qq plot	 (figure \ref{fig: warmmiete qq}). For further investigations, even more complex models with more layers and more neurons may be possible. However, the documented runtime has to be considered. Already a model with two layers and four and two neurons ran on average 14 minutes. More complex models will increase the run times again. As an alternative to complexity, further investigation of the hyperparameters should be conducted. For example, an analysis of the learning rate could be performed. Other activation functions such as the tangent hyperbolic function could also be exploited. It would also be interesting to analyze how the model evolves when the number of iterations is changed. In the models used, a maximum of 100,000 iterations were performed. On the other hand, this will again affect the runtime.
+	
+	\begin{thebibliography}{9}
+	\bibitem[BQ]{Bootstrap} Quinto, Butch. Next-Generation Machine Learning with Spark. New York, NY, Apress, [2020].
+	ISBN 978-1-4842-5669-5
+	
+	\bibitem[IG]{Deep Learning Goodfellow} Ian Goodfellow and Yoshua Bengio and Aaron Courville.Deep Learning. MIT Press 2016. http://www.deeplearningbook.org
+	
+	\bibitem[KV]{Mahalonobis} Kurt Varmuza, Peter Filzmoser (2009). Introduction to Multivariate Statistical Analysis in Chemometrics. Taylor und Francis Inc. ISBN-13 978-1420059472
+	
+	\bibitem[MD]{KMEANS} Matthew F. Dixon, Igor Halperin, Paul Bilokon (2020). Machine Learning in Finance. From Theory to Practice. Springer Nature Switzerland AG. ISBN 978-3-030-41067-4 / e-ISBN 978-3-030-41068-1
+	
+	
+	\bibitem[MF]{Korrelations Matrizen} Michael Friendly (2002). Corrgrams: Exploratory displays for correlation matrices. The American Statistician
+	https://doi.org/10.1198/000313002533
+	
+	\bibitem[MK]{Applied Predictive Modeling} Max Kuhn. Springer. 1st ed. 2013, Corr. 2nd printing 2018 edition (17 May 2013).
+	ISBN-13: 978-1461468486
+	
+	\bibitem[RM]{Riedmill NN 1993} Riedmiller, M. and Braun, H. (1993) A Direct Adaptive Method for Faster Backpropagation Learning: The RPROP Algorithm. Proceedings of the IEEE International Conference on Neural Networks, San Francisco, 28 March 1 April 1993, 586-591. {http://dx.doi.org/10.1109/ICNN.1993.298623} 
+	
+	\bibitem[SR]{Ruder NN rprop+}	Sebastian Ruder. An overview of gradient descent optimization algorithms. Insight Centre for Data Analytics, NUI Galway
+	Aylien Ltd., Dublin. https://arxiv.org/abs/1609.04747
+	
+	\bibitem[TN]{Data Science Solutions with Python}  Nokeri, Tshepo Chris (2022). Data Science Solutions with Python. Berkeley, CA, Apress. ISBN 978-1-4842-7762-1.
+
+	\bibitem[YD]{Mahalonobis2} Yadolah Dodge (2008) The Concise Encyclopedia of Statistics. Springer Verlag. 
+	ISBN-13 978-0397518371
+	
+	\bibitem[CJ]{LM} Chambers, J. M., \& Hastie, T. J. (1992). Statistical Models in S. London: Chapman \& Hall. ISBN 9780412830402
+	
+	\bibitem[XG]{XG}	Group of community members. Official documentation XGBoost. https://xgboost.readthedocs.io/en/stable/
+	
+	
+	
+	
+
+
+\end{thebibliography}
+\end{document}
