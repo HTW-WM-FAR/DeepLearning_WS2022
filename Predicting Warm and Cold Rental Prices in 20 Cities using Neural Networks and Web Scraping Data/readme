@@ -18,7 +18,8 @@ Hier findet die eigentliche Modellierung statt.
 Hier sind mehrere Dateien entstanden, die ich abgespeichert habe, um Outputs 
 nicht erneut berechnen zu müssen, oder um Ergebnisse reproduzierbar zu machen
 
-<fit_nn_1_50x.rda> alle 210 neuronale Netze
+<fit_nn_1_50x.rda> alle 210 neuronale Netze - Die Datei ist zu groß für den Upload (250 MB),
+bei Interesse müssen wir einen anderen Weg finden.
 <acc_table.txt> Die Accuracy Daten für die alle Modelle (ohne Bootstrap Aggregation)
 <acc_table2.txt> Die Accuracy Daten für die alle Bootstrap Aggregation Modelle 
 
