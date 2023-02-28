@@ -1,0 +1,21 @@
+
+	\chapter{R-Code}		
+	\begin{Code_kurz} [\textbf{Kontrolle der $\hat{R}$ Statistik}]\textcolor{white}{ }\vspace*{-0.5cm}\label{Code:Rhat}
+		\begin{verbatim}
+		fit_array<-as.array(fit) # Stan S4 Objekt in Array umwandeln
+		# N=Anzahl der berechneten Werte einer Kette - geteilt durch zwei
+		N<-dim(fit_array)[1]/2 
+		M<-dim(fit_array)[2]*2 # M= Anzahl der Ketten - multipliziert mit zwei
+		# Die Werte für theta werden aus dem Array herausgezogen,
+		# es entsteht eine NxM Matrix
+		Chains<-fit_array[,,"theta"]
+		# die Ketten werden halbiert und als Matrix zusammengefügt
+		Chains<-cbind(Chains[1:N,],Chains[(N+1):(2*N),]) 
+		vars<-diag(var(Chains)) # die Varianzen der Ketten
+		means<-colMeans(Chains);means # die Erwartungswerte der Ketten
+		Z<-var(means);Z # zwischen Varianzen
+		I<-mean(vars)   # innere Varianzen
+		var<-(N-1)/N*I+Z # geschätzte Varianz
+		Rhat<-sqrt(var/I);Rhat 
+		\end{verbatim}
+	\end{Code_kurz}
