@@ -28,7 +28,6 @@ There are four R files.
 # DE
 
 Es gibt vier R Dateien.
-
 -  <immonet web scraping_mieten.R>
   - Start: Daten auslesen <immonet web scraping_mieten.R>
   - Das Ergebnis ist die Datei < 20221223miete.rda > 
