@@ -2,6 +2,10 @@
 
 There are four R files.
 
+- Erster Stichpunkt
+  - Unterstichpunkt 1
+  - Unterstichpunkt 2
+
 - <immonet web scraping_rental.R>
   * Start: read data <immonet web scraping_rent.R>.
     + The result is the file < 20221223rent.rda>. 
