@@ -2,32 +2,26 @@
 
 There are four R files.
 
-- Erster Stichpunkt
-  - Unterstichpunkt 1
-  - Unterstichpunkt 2
 
 - <immonet web scraping_rental.R>
-  * Start: read data <immonet web scraping_rent.R>.
-    + The result is the file < 20221223rent.rda>. 
+  - Start: read data <immonet web scraping_rent.R>.
+  - The result is the file < 20221223rent.rda>. 
 
-2. <scrapping_correction.R>
-The data was incorrect (see seminar paper).
-Therefore it was tried to correct the data <scrapping_correction.R>.
-The result is the file <20221223miete2.rda> 
+- <scrapping_correction.R>
+  - The data was incorrect (see seminar paper).
+  - Therefore it was tried to correct the data <scrapping_correction.R>.
+  - The result is the file <20221223miete2.rda> 
 
-3. <outlierCheck.R>
-Here the data was analyzed and converted (Numeric -> Factor for example).
-The result is the file <tbl.rda> this is used for the modeling
+- <outlierCheck.R>
+  - Here the data was analyzed and converted (Numeric -> Factor for example).
+  - The result is the file <tbl.rda> this is used for the modeling
 
-4. <fit.R>
-This is where the actual modeling takes place. 
-Here are several files created, which I saved to avoid having to recalculate outputs 
-not to have to calculate again, or to make results reproducible
-
-<fit_nn_1_50x.rda> all 210 neural networks - The file is too big for upload (250 MB),
-if you are interested we will have to find another way.
-<acc_table.txt> The accuracy data for the all models (without bootstrap aggregation).
-<acc_table2.txt> The Accuracy data for the all Bootstrap Aggregation models 
+- <fit.R>
+  - This is where the actual modeling takes place. 
+  - Here are several files created, which I saved to avoid having to recalculate outputs not to have to calculate again, or to make results reproducible
+    - <fit_nn_1_50x.rda> all 210 neural networks - The file is too big for upload (250 MB), if you are interested we will have to find another way.
+    - <acc_table.txt> The accuracy data for the all models (without bootstrap aggregation).
+    - <acc_table2.txt> The Accuracy data for the all Bootstrap Aggregation models 
 
 
 
