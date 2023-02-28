@@ -1,4 +1,4 @@
-###### EN #####
+# EN 
 
 There are four R files.
 
@@ -27,7 +27,7 @@ if you are interested we will have to find another way.
 
 
 
-###### DE #####
+# DE
 
 Es gibt vier R Dateien.
 
