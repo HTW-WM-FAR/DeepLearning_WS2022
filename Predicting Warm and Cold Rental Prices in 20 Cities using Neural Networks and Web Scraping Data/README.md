@@ -2,7 +2,6 @@
 
 There are four R files.
 
-
 - <immonet web scraping_rental.R>
   - Start: read data <immonet web scraping_rent.R>.
     - The result is the file < 20221223rent.rda>. 
@@ -28,9 +27,10 @@ There are four R files.
 # DE
 
 Es gibt vier R Dateien.
--  <immonet web scraping_mieten.R>
+  
+- <immonet web scraping_mieten.R>
   - Start: Daten auslesen <immonet web scraping_mieten.R>
-  - Das Ergebnis ist die Datei < 20221223miete.rda > 
+    - Das Ergebnis ist die Datei < 20221223miete.rda > 
 
 - <scrapping_korrektur.R>
   - Die Daten waren Fehlerhaft (siehe Seminararbeit). Daher wurde versucht die Daten zu korrigieren <scrapping_korrektur.R>
