@@ -3,8 +3,8 @@
 There are four R files.
 
 - <immonet web scraping_rental.R>
-  - Start: read data <immonet web scraping_rent.R>.
-    - The result is the file < 20221223rent.rda>. 
+  * Start: read data <immonet web scraping_rent.R>.
+    + The result is the file < 20221223rent.rda>. 
 
 2. <scrapping_correction.R>
 The data was incorrect (see seminar paper).
